@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.spring.dao.UserMassegeDao">
+
+    <select id="getUsermassegeByusername" parameterType="String"  resultType="UserMassege" >
+    	select * from user where username = #{username}
+    </select>
+   
+    <insert id="insertUsermassege" parameterType="UserMassege" >
+        insert into user (username,password,tel) values(#{username},#{password},#{tel})
+    </insert>
+    
+    <update id="updatepassword" parameterType="UserMassege" >
+        update user set password = #{password} where tel= #{tel}
+    </update>
+</mapper>
