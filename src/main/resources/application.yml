@@ -1,13 +1,13 @@
 mybatis:
-  mapper-locations: classpath*:mapper/*.xml  #ÅäÖÃÓ³ÉäÎÄ¼ş
-  type-aliases-package: com.wang.spring.pojo #ÅäÖÃÊµÌåÀà
+  mapper-locations: classpath*:mapper/*.xml  #ï¿½ï¿½ï¿½ï¿½Ó³ï¿½ï¿½ï¿½Ä¼ï¿½
+  type-aliases-package: com.wang.spring.pojo #ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
 server:
   port: 8081
 spring:
   datasource:
-    name: andriod_arerci  #Êı¾İ¿âÃû
-    url: jdbc:mysql://localhost:3306/andriod_arerci?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai #url
-    username: root  #ÓÃ»§Ãû
-    password: root  #ÃÜÂë
-    driver-class-name: com.mysql.cj.jdbc.Driver  #Êı¾İ¿âÁ´½ÓÇı¶¯
+    name: andriod_arerci  #ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½
+    url: jdbc:mysql://localhost:3306/nice_doctor?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai #url
+    username: root  #ï¿½Ã»ï¿½ï¿½ï¿½
+    password: root  #ï¿½ï¿½ï¿½ï¿½
+    driver-class-name: com.mysql.cj.jdbc.Driver  #ï¿½ï¿½ï¿½İ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
