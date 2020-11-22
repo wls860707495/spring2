@@ -5,6 +5,16 @@ public class UserMassege {
 	private int userid;
 	private String username;
 	private String password;
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	private String type;
 	public int getUserid() {
 		return userid;
 	}

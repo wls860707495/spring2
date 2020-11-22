@@ -8,7 +8,7 @@
     </select>
    
     <insert id="insertUsermassege" parameterType="UserMassege" >
-        insert into user (username,password) values(#{username},#{password})
+        insert into user (username,password,type) values(#{username},#{password},#{type})
     </insert>
     
     <update id="updatepassword" parameterType="UserMassege" >

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wang.spring.dao.ClinicMassegeDao">
+
+    <insert id="insertClinicmassege" parameterType="ClinicMassege" >
+        insert into clinic_account (userid,clinic_name,clinic_email,clinic_tel,clinic_type,clinic_head,head_tel,head_email,bank_name,regis_num,bank_branch,bank_accout,accout_name) values(#{userid},#{clinic_name},#{clinic_email},#{clinic_tel},#{clinic_type},#{clinic_head},#{head_tel},#{head_email},#{bank_name},#{regis_num},#{bank_branch},#{bank_accout},#{accout_name})
+    </insert>
+
+</mapper>
