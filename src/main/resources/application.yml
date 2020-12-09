@@ -1,3 +1,4 @@
+
 mybatis:
   mapper-locations: classpath*:mapper/*.xml  #����ӳ���ļ�
   type-aliases-package: com.wang.spring.pojo #����ʵ����
@@ -10,4 +11,3 @@ spring:
     username: root  #�û���
     password: root  #����
     driver-class-name: com.mysql.cj.jdbc.Driver  #���ݿ���������
-

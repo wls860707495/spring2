@@ -6,7 +6,7 @@ public class Savefile {
     public void savePic(InputStream inputStream, String fileName) throws FileNotFoundException {
         OutputStream os = null;
         try {
-            String path = "D:\\testFile\\";
+            String path = "E:\\vue2\\static";
             // 2、保存到临时文件
             // 1K的数据缓冲
             byte[] bs = new byte[1024];
@@ -18,7 +18,7 @@ public class Savefile {
             if (!tempFile.exists()) {
                 tempFile.mkdirs();
             }
-            os = new FileOutputStream(tempFile.getPath() + File.separator + fileName+".jpg");
+            os = new FileOutputStream(tempFile.getPath() + File.separator + fileName);
             // 开始读取
             while ((len = inputStream.read(bs)) != -1) {
                 os.write(bs, 0, len);

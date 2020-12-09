@@ -5,7 +5,10 @@
 
    
     <insert id="insertPushmassege" parameterType="PushMassege" >
-        insert into push_content (title,content,pushtime,user_id) values(#{title},#{content},#{pushtime},#{user_id})
+        insert into push_content (title,content,pushtime,user_name) values(#{title},#{content},#{pushtime},#{user_name})
     </insert>
+    <select id="getPushMassege"  resultType="PushMassege" >
+        select * from push_content
+    </select>
 
 </mapper>

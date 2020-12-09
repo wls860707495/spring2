@@ -7,6 +7,8 @@ import com.wang.spring.service.UserMassegeService;
 import com.wang.spring.util.Dealstring;
 import com.wang.spring.util.Savefile;
 import com.wang.spring.util.TokenUtil;
+import net.sf.json.JSON;
+import net.sf.json.JSONArray;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -56,17 +58,29 @@ public class PushMassegeController {
         //通过token获取userid
         String [] verify = TokenUtil.verify(token);
         String username = verify[1];
-        UserMassege userMassege = userMassegeService.getUsermassegeByusername(username);
-        int userid = userMassege.getUserid();
+//        UserMassege userMassege = userMassegeService.getUsermassegeByusername(username);
+//        int userid = userMassege.getUserid();
 
 
         PushMassege pushmassege = new PushMassege();
         pushmassege.setContent(htmls);
-        pushmassege.setUser_id(userid);
+        pushmassege.setUser_name(username);
         pushmassege.setTitle("test");
         pushmassege.setPushtime(new Timestamp(System.currentTimeMillis()));
         pushMassegeService.insertPushmassege(pushmassege);
 
         return "false";
+    }
+
+    //获取发布标题列表
+    @RequestMapping(value = "/listcontent", method = RequestMethod.POST)
+    @ResponseBody
+    public JSONArray listPushcontent(HttpServletRequest request) throws Exception{    //登录
+         List<PushMassege> pushMasseges = pushMassegeService.getPushMassege();
+        JSONArray jsons= JSONArray.fromObject(pushMasseges);
+        for (int i=0;i<jsons.size();i++){
+            jsons.getJSONObject(i).put("pushtime",pushMasseges.get(i).getPushtime().toString());
+        }
+        return jsons;
     }
 }
